@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>hexo搭建个人博客</title>
+    <url>/hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<h3 id="hexo的安装"><a href="#hexo的安装" class="headerlink" title="hexo的安装"></a>hexo的安装</h3><p>如果安装了node环境，那么安装hexo仅需要一条命令</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p>如果未安装node环境，可以参考<a href="https://hexo.io/zh-cn/docs/">hexo文档地址</a>进行安装</p>
+<h3 id="hexo目录简单介绍"><a href="#hexo目录简单介绍" class="headerlink" title="hexo目录简单介绍"></a>hexo目录简单介绍</h3><p><code>_config.yml</code>:hexo配置文件，主要用来配置hexo的主题或者插件的一些选项</p>
+<p><code>scaffolds</code>:hexo的模板文件，当我们用<code>hexo new</code>命令生成新的文章的时候，会自动使用里面的模板</p>
+<p>1、post.md：新建文档时使用的模板</p>
+<p>2、page.md：新建页面时使用的模板</p>
+<p><code>source</code>:主要用来存在文章的md文件以及页面文件</p>
+<p>1、_posts/:文章页面存放地址</p>
+<h3 id="hexo常用命令"><a href="#hexo常用命令" class="headerlink" title="hexo常用命令"></a>hexo常用命令</h3><p>1、新建一个网站，如果没有folder，那么就在当前目录创建</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo init [folder]</span><br></pre></td></tr></table></figure>
+
+
+
+<p>2、新建一篇博客，如果layout为空，那么会使用scaffolds/post.md作为模板来生成</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+<p>3、启动本地预览服务</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo serve</span><br></pre></td></tr></table></figure>
+
+<p>默认情况下，访问网址为： <code>http://localhost:4000/</code>。</p>
+<table>
+<thead>
+<tr>
+<th align="left">选项</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>-p</code>, <code>--port</code></td>
+<td align="left">重设端口</td>
+</tr>
+<tr>
+<td align="left"><code>-s</code>, <code>--static</code></td>
+<td align="left">只使用静态文件</td>
+</tr>
+<tr>
+<td align="left"><code>-l</code>, <code>--log</code></td>
+<td align="left">启动日记记录，使用覆盖记录格式</td>
+</tr>
+</tbody></table>
+<p>命令可以简写为</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo s</span></span><br></pre></td></tr></table></figure>
+
+<p>4、部署网站。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo deploy</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>-g</code>, <code>--generate</code></td>
+<td align="left">部署之前预先生成静态文件</td>
+</tr>
+</tbody></table>
+<p>该命令可以简写为：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo d</span></span><br></pre></td></tr></table></figure>
+
+<p>5、 generate</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>生成静态文件。</p>
+<table>
+<thead>
+<tr>
+<th align="left">选项</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>-d</code>, <code>--deploy</code></td>
+<td align="left">文件生成后立即部署网站</td>
+</tr>
+<tr>
+<td align="left"><code>-w</code>, <code>--watch</code></td>
+<td align="left">监视文件变动</td>
+</tr>
+<tr>
+<td align="left"><code>-b</code>, <code>--bail</code></td>
+<td align="left">生成过程中如果发生任何未处理的异常则抛出异常</td>
+</tr>
+<tr>
+<td align="left"><code>-f</code>, <code>--force</code></td>
+<td align="left">强制重新生成文件 Hexo 引入了差分机制，如果 <code>public</code> 目录存在，那么 <code>hexo g</code> 只会重新生成改动的文件。 使用该参数的效果接近 <code>hexo clean &amp;&amp; hexo generate</code></td>
+</tr>
+<tr>
+<td align="left"><code>-c</code>, <code>--concurrency</code></td>
+<td align="left">最大同时生成文件的数量，默认无限制</td>
+</tr>
+</tbody></table>
+<p>该命令可以简写为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+
+<p><strong>当我们在_post中删除了文章，需要使用hexo g命令重新生成</strong></p>
+]]></content>
+      <categories>
+        <category>积累</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>whistle插件开发指南</title>
+    <url>/whistle%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<h3 id="基础介绍"><a href="#基础介绍" class="headerlink" title="基础介绍"></a>基础介绍</h3><p><a href="https://github.com/avwo/whistle">whistle</a>(读音[ˈwɪsəl]，拼音[wēisǒu])基于Node实现的跨平台web调试代理工具，可以十分方便的对接口进行mock调试，以及对h5页面添加控制台、调试、日志打印等功能，相关可以查看<a href="https://github.com/avwo/whistle">项目地址</a>或者<a href="https://wproxy.org/whistle/">使用文档</a>了解更多。</p>
+<h3 id="插件介绍"><a href="#插件介绍" class="headerlink" title="插件介绍"></a>插件介绍</h3><p>对于我们一些特定业务场景的需要，whistle也提供了插件扩展能力，通过whistle插件，我们可以自定义规则、截取请求，响应内容、自定义修改请求等。</p>
+<h4 id="插件示例"><a href="#插件示例" class="headerlink" title="插件示例"></a>插件示例</h4><p><a href="https://github.com/whistle-plugins/whistle.autosave">whistle.autosave</a>:可以自动保存我们需要的请求到本地</p>
+<p><a href="https://cf.jd.com/pages/viewpage.action?pageId=481831885">whistle.cosparm</a>:whistle参数匹配增强</p>
+<p><a href="https://github.com/whistle-plugins/whistle.inspect">whistle.inspect</a>:可以对手机上面的h5页面注入<a href="https://github.com/Tencent/vConsole">vConsole</a>或者<a href="https://github.com/liriliri/eruda">eruda</a></p>
+<img src="whistle插件开发指南/image-20210427150827204.png" alt="image-20210427150827204" style="zoom: 25%;" />
+
+
+
+<h4 id="插件基本工作原理"><a href="#插件基本工作原理" class="headerlink" title="插件基本工作原理"></a>插件基本工作原理</h4><p>whistle的插件是一个独立运行的进程，并通过暴露一些http server的方式实现与whistle的交互，whistle会在特定阶段请求特定的server，具体看下面的原理</p>
+<img src="/whistle%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/plugin1.png" class="" title="This is an image">
+
+
+
+
+
+<img src="/whistle%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/plugin1.png" class="" title="This is an example image">
+
+<p><img src="whistle%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/plugin1.png" alt="img"></p>
+<p>对于插件</p>
+<h4 id="插件的基本结构"><a href="#插件的基本结构" class="headerlink" title="插件的基本结构"></a>插件的基本结构</h4><h3 id="插件开发"><a href="#插件开发" class="headerlink" title="插件开发"></a>插件开发</h3>]]></content>
+      <categories>
+        <category>积累</category>
+        <category>原创</category>
+      </categories>
+      <tags>
+        <tag>whistle</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【转】DeepLink的实现原理</title>
+    <url>/DeepLink%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/</url>
+    <content><![CDATA[<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><p>这么流弊的DeepLink是不是非常的难？其实DeepLink的基本实现是简单到不可思议，他的核心思想实际上是Android的隐式启动。我们平时的隐式启动主要是通过Action和Category配合启动指定类型的Activity：</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;activity</span><br><span class="line">      android:name=<span class="string">&quot;.SecondActivity&quot;</span></span><br><span class="line">      android:exported=<span class="string">&quot;true&quot;</span>&gt;</span><br><span class="line">      &lt;intent-filter&gt;</span><br><span class="line">           &lt;action android:name=<span class="string">&quot;com.lzp.deeplinkdemo.SECOND&quot;</span> /&gt;</span><br><span class="line">           &lt;category android:name=<span class="string">&quot;android.intent.category.DEFAULT&quot;</span> /&gt;</span><br><span class="line">      &lt;/intent-filter&gt;</span><br><span class="line">&lt;/activity&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> intent = Intent(<span class="string">&quot;com.lzp.deeplinkdemo.SECOND&quot;</span>)</span><br><span class="line">intent.addCategory(Intent.CATEGORY_DEFAULT)</span><br><span class="line">startActivity(intent)</span><br></pre></td></tr></table></figure>
+
+<p>除了action和category，还有一种隐式启动的用法是配置data:</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">&lt;data</span><br><span class="line">     android:scheme=&quot;xxxx&quot;</span><br><span class="line">     android:host=&quot;xxxx&quot;</span><br><span class="line">     android:port=&quot;xxxx&quot;</span><br><span class="line">     android:path=&quot;xxxx&quot;</span><br><span class="line">     android:pathPattern=&quot;xxxx&quot;</span><br><span class="line">     android:pathPrefix=&quot;xxxx&quot;</span><br><span class="line">     android:mimeType=&quot;xxxx&quot;/&gt;</span><br></pre></td></tr></table></figure>
+
+<p>scheme：协议类型，我们可以自定义，一般是项目或公司缩写，String</p>
+<p>host：域名地址，String</p>
+<p>port：端口，int。</p>
+<p>path：访问的路径，String</p>
+<p>pathPrefix：访问的路径的前缀，String</p>
+<p>pathPattern：访问路径的匹配格式，相对于path和pathPrefix更为灵活，String</p>
+<p>mimeType：资源类型，例如常见的：video/*, image/png, text/plain。</p>
+<p>通过这几个配置项，我们发现data实际上为当前的页面绑定了一个Uri地址，这样就可以通过Uri直接打开这个Activity。</p>
+<p>复习一下Uri的结构：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;scheme&gt; :&#x2F;&#x2F; &lt;host&gt; : &lt;port&gt; &#x2F; [ &lt;path&gt; | &lt;pathPrefix&gt; | &lt;pathPattern&gt; ]</span><br><span class="line"></span><br><span class="line">示例：https:&#x2F;&#x2F;zhidao.baidu.com&#x2F;question&#x2F;2012197558423339788.html</span><br></pre></td></tr></table></figure>
+
+<p>scheme和host不可缺省，否则配置无效；path，pathPrefix，pathPattern一般指定一个就可以了，pathPattern与host不可同时使用；mimeType可以不设置，如果设置了，跳转的时候必须加上mimeType，否则不能匹配到Activity。</p>
+<p>现在我们修改SecondActivity的intent-filer：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">&lt;activity</span><br><span class="line">    android:name=&quot;.SecondActivity&quot;</span><br><span class="line">    android:exported=&quot;true&quot;&gt;</span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">&quot;com.lzp.deeplinkdemo.SECOND&quot;</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">&quot;android.intent.category.DEFAULT&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">     </span><br><span class="line">        <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span>              </span><br><span class="line">     </span><br><span class="line">            &lt;data</span><br><span class="line">                android:scheme=&quot;lzp&quot;</span><br><span class="line">                android:host=&quot;demo&quot;</span><br><span class="line">                android:port=&quot;8888&quot;</span><br><span class="line">                android:path=&quot;/second&quot;</span><br><span class="line">                android:pathPattern=&quot;/second&quot;</span><br><span class="line">                android:pathPrefix=&quot;/second&quot;</span><br><span class="line">                android:mimeType=&quot;text/plain&quot;/&gt;</span><br><span class="line">     </span><br><span class="line">        <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">activity</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>打开SecondActivity：</p>
+<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> intent = Intent()</span><br><span class="line">intent.setDataAndType(Uri.parse(<span class="string">&quot;lzp://demo:8888/second&quot;</span>), <span class="string">&quot;text/plain&quot;</span>)</span><br><span class="line">startActivity(intent)</span><br></pre></td></tr></table></figure>
+
+<p>现在在App中已经可以打开页面了，那么用web能不能正常打开呢？首先配置MainActivity的intent-filter：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">&lt;activity</span><br><span class="line">    android:name=&quot;.MainActivity&quot;</span><br><span class="line">    android:exported=&quot;true&quot;&gt;</span><br><span class="line">        <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">&quot;android.intent.action.MAIN&quot;</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">&quot;android.intent.category.LAUNCHER&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">            &lt;data</span><br><span class="line">                android:scheme=&quot;lzp&quot;</span><br><span class="line">                android:host=&quot;demo&quot;</span><br><span class="line">                android:path=&quot;/main&quot;/&gt;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">activity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Web需要打开url链接，所以我们不需要配置mimeType，</p>
+<p>手写一个简单的Html页面：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span> <span class="meta-keyword">PUBLIC</span> <span class="meta-string">&quot;-//W3C//DTD HTML 4.01//EN&quot;</span> <span class="meta-string">&quot;http://www.w3.org/TR/html4/strict.dtd&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;Content-Type&quot;</span> <span class="attr">content</span>=<span class="string">&quot;text/html; charset=utf-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;Content-Style-Type&quot;</span> <span class="attr">content</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;Generator&quot;</span> <span class="attr">content</span>=<span class="string">&quot;Cocoa HTML Writer&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;CocoaVersion&quot;</span> <span class="attr">content</span>=<span class="string">&quot;1561.4&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">p</span><span class="selector-class">.p1</span> &#123;<span class="attribute">margin</span>: <span class="number">0.0px</span> <span class="number">0.0px</span> <span class="number">0.0px</span> <span class="number">0.0px</span>; <span class="attribute">line-height</span>: <span class="number">17.0px</span>; <span class="attribute">font</span>: <span class="number">12.0px</span> <span class="string">&#x27;Songti SC&#x27;</span>; <span class="attribute">color</span>: <span class="number">#000000</span>; -webkit-text-stroke: <span class="number">#000000</span>; <span class="attribute">min-height</span>: <span class="number">17.0px</span>&#125;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">span</span><span class="selector-class">.s1</span> &#123;<span class="attribute">font-kerning</span>: none&#125;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;lzp://demo/main&quot;</span>&gt;</span>打开main<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Html页面添加了一个链接，点击打开lzp://demo/main这个地址。把html导入到手机中，用浏览器打开，点击“打开app”，毫无反应！！！</p>
+<p>没错，如果只是配置了data，Web还是没办法通过url地址打开我们的Activity，那怎么解决这个问题呢？</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Activities that can be safely invoked from a browser must support this</span></span><br><span class="line"><span class="comment">     * category.  For example, if the user is viewing a web page or an e-mail</span></span><br><span class="line"><span class="comment">     * and clicks on a link in the text, the Intent generated execute that</span></span><br><span class="line"><span class="comment">     * link will require the BROWSABLE category, so that only activities</span></span><br><span class="line"><span class="comment">     * supporting this category will be considered as possible actions.  By</span></span><br><span class="line"><span class="comment">     * supporting this category, you are promising that there is nothing</span></span><br><span class="line"><span class="comment">     * damaging (without user intervention) that can happen by invoking any</span></span><br><span class="line"><span class="comment">     * matching Intent.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@SdkConstant(SdkConstantType.INTENT_CATEGORY)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String CATEGORY_BROWSABLE = <span class="string">&quot;android.intent.category.BROWSABLE&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>我们还需要配置</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;category android:name&#x3D;&quot;android.intent.category.BROWSABLE&quot; &#x2F;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>从官方的注释上写明：需要浏览器打开Activity，需要设置这个分类。例如邮件，只有设置了这个分类的Activity才会考虑被打开。加上这个配置后，再次点击看看有没有效果。</p>
+<p>如果你真的亲自尝试了，你会发现还是没有效果。这个时候我们需要回顾一下action和category的用法：</p>
+<p>首先需要尝试匹配action，action匹配成功了之后，才会继续匹配设置的category，所以单独匹配category是没有任何效果的。</p>
+<p>因为我们要打开的仅仅是一个页面，所以我们设置</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line">     * Activity Action: Display the data to the user.  This is the most common</span><br><span class="line">     * action performed on data -- it is the generic action you can use on</span><br><span class="line">     * a piece of data to get the most reasonable thing to occur.  For example,</span><br><span class="line">     * when used on a contacts entry it will view the entry; when used on a</span><br><span class="line">     * mailto: URI it will bring up a compose window filled with the information</span><br><span class="line">     * supplied by the URI; when used with a tel: URI it will invoke the</span><br><span class="line">     * dialer.</span><br><span class="line">     * &lt;p&gt;Input: &#123;@link #getData&#125; is URI from which to retrieve data.</span><br><span class="line">     * &lt;p&gt;Output: nothing.</span><br><span class="line">     *&#x2F;</span><br><span class="line">    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)</span><br><span class="line">    public static final String ACTION_VIEW &#x3D; &quot;android.intent.action.VIEW&quot;;</span><br></pre></td></tr></table></figure>
+
+<p>官方的注释说明ACTION_VIEW表示展示数据的页面，系统默认的Action就是ACTION_VIEW。添加上ACTION_VIEW，再次点击打开app。</p>
+<p>还是不行，但是跟之前不同的是，这次出现了启动app的提示窗口，但是app却闪退了，看一下崩溃日志：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">09-06 14:35:15.459 1216-3270&#x2F;? W&#x2F;IntentResolver: resolveIntent failed: found match, but none with CATEGORY_DEFAULT</span><br><span class="line">09-06 14:35:15.473 26708-26708&#x2F;? E&#x2F;AKAD: thread:Thread[main,5,main]</span><br><span class="line">    android.content.ActivityNotFoundException: No Activity found to handle Intent &#123; act&#x3D;android.intent.action.VIEW cat&#x3D;[android.intent.category.BROWSABLE] dat&#x3D;lzp:&#x2F;&#x2F;demo&#x2F;main?id&#x3D;111 flg&#x3D;0x10000000 (has extras) &#125;</span><br><span class="line">        at android.app.Instrumentation.checkStartActivityResult(Instrumentation.java:1805)</span><br><span class="line">        at android.app.Activity.startActivityIfNeeded(Activity.java:4420)</span><br><span class="line">        at android.app.Activity.startActivityIfNeeded(Activity.java:4367)</span><br><span class="line">        at org.chromium.chrome.browser.externalnav.ExternalNavigationDelegateImpl$3.onClick(ExternalNavigationDelegateImpl.java:239)</span><br><span class="line">        at com.qihoo.browser.dialog.CustomDialog$3.onClick(CustomDialog.java:274)</span><br><span class="line">        at android.view.View.performClick(View.java:5267)</span><br><span class="line">        at android.view.View$PerformClick.run(View.java:21249)</span><br><span class="line">        at android.os.Handler.handleCallback(Handler.java:739)</span><br><span class="line">        at android.os.Handler.dispatchMessage(Handler.java:95)</span><br><span class="line">        at android.os.Looper.loop(Looper.java:148)</span><br><span class="line">        at android.app.ActivityThread.main(ActivityThread.java:5541)</span><br><span class="line">        at java.lang.reflect.Method.invoke(Native Method)</span><br><span class="line">        at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:745)</span><br><span class="line">        at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:635)</span><br></pre></td></tr></table></figure>
+
+<p>日志上写的很明确，虽然找到了匹配的页面，但是没有设置CATEGORY_DEFAULT。看来Web通过url来打开链接，必须要求设置CATEGORY_DEFAULT，添加上后，看一下我们完整的xml配置：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">&lt;activity</span><br><span class="line">    android:name=&quot;.MainActivity&quot;</span><br><span class="line">            android:exported=&quot;true&quot;&gt;</span><br><span class="line">        <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">&quot;android.intent.action.MAIN&quot;</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">&quot;android.intent.category.LAUNCHER&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">&quot;android.intent.action.VIEW&quot;</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">&quot;android.intent.category.DEFAULT&quot;</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">&quot;android.intent.category.BROWSABLE&quot;</span> /&gt;</span></span><br><span class="line">            &lt;data</span><br><span class="line">                android:scheme=&quot;lzp&quot;</span><br><span class="line">                android:host=&quot;demo&quot;</span><br><span class="line">                android:path=&quot;/main&quot;/&gt;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">activity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>最后看一下效果:</p>
+<p>那么如何在通过url给app传递参数呢？要实现这个也很简单，首先我们知道要想给url添加参数，直接在url后拼接key=value就可以了，例如：</p>
+<p><a href="http://www.baidu.com/s?wd=android">http://www.baidu.com/s?wd=android</a></p>
+<p>其中wd=android就是我们要添加的参数，现在假设我们需要为Activity传递一个参数id，我们就可以修改uri为：</p>
+<p>lzp://demo/main?id=111</p>
+<p>客户端接收key为id的参数的方法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if (intent !&#x3D; null &amp;&amp; intent.data !&#x3D; null) &#123;</span><br><span class="line">       Log.e(&quot;lzp&quot;, intent.data.getQueryParameter(&quot;id&quot;))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果只是接收参数的话，客户端不需要进行任何修改，但是这里有一种情况，如果我们Activity必须传递id，如果不传递id不允许跳转怎么办呢？我们有两种办法解决这个问题：</p>
+<p>1、在刚才的if语句增加else判断，当参数为空的时候，进行finish操作。</p>
+<p>2、通过pathPattern，通过通配符设置必须有参数。</p>
+<p>我们看一下第二种的实现方式:</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">&lt;data</span><br><span class="line">    android:pathPattern=&quot;lzp://demo/main?id=*&quot;</span><br><span class="line">    android:scheme=&quot;lzp&quot; /&gt;</span><br></pre></td></tr></table></figure>
+
+<p>之前已经说过，pathPattern不能和host同时使用，所以我们只能删除host，pathPattern匹配的是整个Uri，这样我们还可以指定多个参数。但是AndroidManifest.xml会报错，我们忽略就可以了</p>
+<p>总结<br>其实DeepLink的实现原理就是这么简单，只是我们对于隐式启动理解的不够。是不是也想给自己的App加上DeepLink呢？赶快尝试一下吧~</p>
+<p>————————————————<br>版权声明：本文为CSDN博主「珠穆朗玛小王子」的原创文章<br>原文链接：<a href="https://blog.csdn.net/u011315960/article/details/82458806">https://blog.csdn.net/u011315960/article/details/82458806</a></p>
+]]></content>
+      <categories>
+        <category>转载</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+</search>
