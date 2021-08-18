@@ -9,7 +9,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    BottomSheetBehavior基础使用 |  Hexo
+     Hexo
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -41,37 +41,24 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-BottomSheetBehavior基础使用"
+  id="post-使用注解-IntDef替代枚举"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
   data-scroll-reveal
 >
   <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  BottomSheetBehavior基础使用
-</h1>
- 
-
-    </header>
      
     <div class="article-meta">
-      <a href="/BottomSheetBehavior%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/" class="article-date">
-  <time datetime="2021-08-17T07:03:54.000Z" itemprop="datePublished">2021-08-17</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/default/">default</a>
-  </div>
-  
+      <a href="/%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3-IntDef%E6%9B%BF%E4%BB%A3%E6%9E%9A%E4%B8%BE/" class="article-date">
+  <time datetime="2021-08-18T11:30:59.071Z" itemprop="datePublished">2021-08-18</time>
+</a>   
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">517</span>
+            <span class="post-count">371</span>
         </span>
     </span>
 
@@ -80,7 +67,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">2 分钟</span>
+            <span class="post-count">1 分钟</span>
         </span>
     </span>
 </div>
@@ -95,26 +82,14 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>好记性不如烂笔头，做个简简单单的记录~</p>
-<h3 id="基础使用"><a href="#基础使用" class="headerlink" title="基础使用"></a>基础使用</h3><p>1、添加布局</p>
-<p>在CoordinatorLayout的子布局中添加<code>app:layout_behavior=&quot;@string/bottom_sheet_behavior&quot;</code>即可</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">androidx.coordinatorlayout.widget.CoordinatorLayout</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:app</span>=<span class="string">&quot;http://schemas.android.com/apk/res-auto&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">&quot;match_parent&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">&quot;match_parent&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    &lt;FrameLayout</span><br><span class="line">        android:id=&quot;@+id/ttttttt&quot;</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;300dp&quot;</span><br><span class="line">        android:background=&quot;#ffffff&quot;</span><br><span class="line">        app:behavior_draggable=&quot;false&quot;</span><br><span class="line">        app:behavior_peekHeight=&quot;0dp&quot;</span><br><span class="line">        app:layout_behavior=&quot;@string/bottom_sheet_behavior&quot;&gt;</span><br><span class="line"></span><br><span class="line">        &lt;TextView</span><br><span class="line">            android:id=&quot;@+id/l_66666666&quot;</span><br><span class="line">            android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">            android:layout_height=&quot;match_parent&quot;</span><br><span class="line">            android:text=&quot;山不在高，有仙则名有仙则名有仙则名有仙则名有仙则名有仙则名有仙则名有仙则名有仙则名。&quot; /&gt;</span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">FrameLayout</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">androidx.coordinatorlayout.widget.CoordinatorLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+  <h4 id="开始之前我们先看看Android-官方文档中的一段话。"><a href="#开始之前我们先看看Android-官方文档中的一段话。" class="headerlink" title="开始之前我们先看看Android 官方文档中的一段话。"></a>开始之前我们先看看Android 官方文档中的一段话。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Be careful with code abstractions</span><br><span class="line"></span><br><span class="line">Developers often use abstractions simply as a good programming practice, because </span><br><span class="line">abstractions can improve code flexibility and maintenance. However, abstractions </span><br><span class="line">come at a significant cost: generally they require a fair amount more code that </span><br><span class="line">needs to be executed, requiring more time and more RAM for that code to be mapped</span><br><span class="line">into memory. So if your abstractions aren&#39;t supplying a significant benefit, you </span><br><span class="line">should avoid them.</span><br><span class="line"></span><br><span class="line">For example, enums often require more than twice as much memory as static constants. You should strictly avoid using enums on Android.</span><br></pre></td></tr></table></figure>
 
-<p>2、代码使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;定义BottomSheetBehavior对象</span><br><span class="line">private BottomSheetBehavior&lt;View&gt; mViewBottomSheetBehavior;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;获取义BottomSheetBehavior对象，mTargetView为定义layout_behavior的View</span><br><span class="line">mViewBottomSheetBehavior &#x3D; BottomSheetBehavior.from(mTargetView);</span><br></pre></td></tr></table></figure>
+<p>官方的说法就是：我们在写代码的时候要注意类型的使用，以便于提高代码的扩展性和维护性，但是原型的使用一般会付出更多的内存的代价，所以如果没有特别大的好处，要尽量避免使用。对于枚举来说占用的内存往往是使用静态常量的两倍，因而我们要尽量避免在Android中使用枚举。</p>
+<p>因而使用@IntDef注解来代替枚举是个不错的选择。</p>
+<p>首先，添加android注解依赖：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compile &#39;com.android.support:support-annotations:25.1.0&#39;</span><br></pre></td></tr></table></figure>
 
-<p>3、可配置属性解析</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;下拉是否可以全部隐藏，默认false</span><br><span class="line">app:behavior_hideable&#x3D;&quot;true&quot;</span><br><span class="line">&#x2F;&#x2F;折叠时的高度</span><br><span class="line">app:behavior_peekHeight&#x3D;&quot;100dp&quot;</span><br><span class="line">&#x2F;&#x2F;下拉时是否可以跳过折叠状态直接隐藏，默认false</span><br><span class="line">app:behavior_skipCollapsed&#x3D;&quot;true&quot;</span><br><span class="line">&#x2F;&#x2F;是否可以拖动，默认true</span><br><span class="line">app:behavior_draggable&#x3D;&quot;false&quot;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;对应api</span><br><span class="line">setHideable()</span><br><span class="line">setPeekHeight()</span><br><span class="line">setSkipCollapsed()</span><br><span class="line">setDraggable()</span><br></pre></td></tr></table></figure>
-
-<p>4、BottomSheetBehavior几个状态以及监听</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">STATE_COLLAPSED:默认的折叠状态， bottom sheets只在底部显示一部分布局。显示高度可以通过 app:behavior_peekHeight 设置（默认是0）</span><br><span class="line">STATE_DRAGGING:过渡状态，此时用户正在向上或者向下拖动bottom sheet</span><br><span class="line">STATE_SETTLING:视图从脱离手指自由滑动到最终停下的这一小段时间</span><br><span class="line">STATE_EXPANDED:bottom sheet 处于完全展开的状态，展开的高度取决于layout_behavior的控件高度</span><br><span class="line">STATE_HIDDEN:默认无此状态（可通过app:behavior_hideable 启用此状态），启用后用户将能通过向下滑动完全隐藏 bottom sheet</span><br></pre></td></tr></table></figure>
-
-<p>5、通过代码控制开关</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;通过setState即可直接展开、折叠、隐藏</span><br><span class="line">mViewBottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);</span><br></pre></td></tr></table></figure>
-
-
-
-
+<h4 id="具体用法如下："><a href="#具体用法如下：" class="headerlink" title="具体用法如下："></a>具体用法如下：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">public class MainActivity extends AppCompatActivity&#123;</span><br><span class="line"></span><br><span class="line">  public static final int STATE_NONE &#x3D; -1;</span><br><span class="line">  public static final int STATE_LOADING &#x3D; 0;</span><br><span class="line">  public static final int STATE_SUCCESS &#x3D; 1;</span><br><span class="line">  public static final int STATE_ERROR &#x3D; 2;</span><br><span class="line">  public static final int STATE_EMPTY &#x3D; 3;</span><br><span class="line"></span><br><span class="line">  private @State int state;</span><br><span class="line"></span><br><span class="line">  public void setState(@State int state)&#123;</span><br><span class="line">      this.state &#x3D; state;</span><br><span class="line">  &#125; </span><br><span class="line"></span><br><span class="line">  @State</span><br><span class="line">  public int getState() &#123;</span><br><span class="line">    return this.state;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @IntDef(&#123;STATE_EMPTY, STATE_ERROR, STATE_LOADING, STATE_NONE, STATE_SUCCESS&#125;)</span><br><span class="line">  @Retention(RetentionPolicy.SOURCE)</span><br><span class="line">  public @interface State &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> @Override</span><br><span class="line">  protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">    super.onCreate(savedInstanceState);</span><br><span class="line">    setContentView(R.layout.activity_main);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
  
       <!-- reward -->
@@ -138,27 +113,16 @@
     
     <footer class="article-footer">
        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/default/" rel="tag">default</a></li></ul>
-
     </footer>
   </div>
 
    
   <nav class="article-nav">
     
-      <a href="/%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3-IntDef%E6%9B%BF%E4%BB%A3%E6%9E%9A%E4%B8%BE/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            (no title)
-          
-        </div>
-      </a>
     
-    
-      <a href="/DeepLink%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/" class="article-nav-link">
+      <a href="/BottomSheetBehavior%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title"></div>
+        <div class="article-nav-title">BottomSheetBehavior基础使用</div>
       </a>
     
   </nav>

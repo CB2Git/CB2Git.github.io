@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title></title>
+    <url>/%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3-IntDef%E6%9B%BF%E4%BB%A3%E6%9E%9A%E4%B8%BE/</url>
+    <content><![CDATA[<h4 id="开始之前我们先看看Android-官方文档中的一段话。"><a href="#开始之前我们先看看Android-官方文档中的一段话。" class="headerlink" title="开始之前我们先看看Android 官方文档中的一段话。"></a>开始之前我们先看看Android 官方文档中的一段话。</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Be careful with code abstractions</span><br><span class="line"></span><br><span class="line">Developers often use abstractions simply as a good programming practice, because </span><br><span class="line">abstractions can improve code flexibility and maintenance. However, abstractions </span><br><span class="line">come at a significant cost: generally they require a fair amount more code that </span><br><span class="line">needs to be executed, requiring more time and more RAM for that code to be mapped</span><br><span class="line">into memory. So if your abstractions aren&#39;t supplying a significant benefit, you </span><br><span class="line">should avoid them.</span><br><span class="line"></span><br><span class="line">For example, enums often require more than twice as much memory as static constants. You should strictly avoid using enums on Android.</span><br></pre></td></tr></table></figure>
+
+<p>官方的说法就是：我们在写代码的时候要注意类型的使用，以便于提高代码的扩展性和维护性，但是原型的使用一般会付出更多的内存的代价，所以如果没有特别大的好处，要尽量避免使用。对于枚举来说占用的内存往往是使用静态常量的两倍，因而我们要尽量避免在Android中使用枚举。</p>
+<p>因而使用@IntDef注解来代替枚举是个不错的选择。</p>
+<p>首先，添加android注解依赖：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">compile &#39;com.android.support:support-annotations:25.1.0&#39;</span><br></pre></td></tr></table></figure>
+
+<h4 id="具体用法如下："><a href="#具体用法如下：" class="headerlink" title="具体用法如下："></a>具体用法如下：</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class MainActivity extends AppCompatActivity&#123;</span><br><span class="line"></span><br><span class="line">  public static final int STATE_NONE &#x3D; -1;</span><br><span class="line">  public static final int STATE_LOADING &#x3D; 0;</span><br><span class="line">  public static final int STATE_SUCCESS &#x3D; 1;</span><br><span class="line">  public static final int STATE_ERROR &#x3D; 2;</span><br><span class="line">  public static final int STATE_EMPTY &#x3D; 3;</span><br><span class="line"></span><br><span class="line">  private @State int state;</span><br><span class="line"></span><br><span class="line">  public void setState(@State int state)&#123;</span><br><span class="line">      this.state &#x3D; state;</span><br><span class="line">  &#125; </span><br><span class="line"></span><br><span class="line">  @State</span><br><span class="line">  public int getState() &#123;</span><br><span class="line">    return this.state;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @IntDef(&#123;STATE_EMPTY, STATE_ERROR, STATE_LOADING, STATE_NONE, STATE_SUCCESS&#125;)</span><br><span class="line">  @Retention(RetentionPolicy.SOURCE)</span><br><span class="line">  public @interface State &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> @Override</span><br><span class="line">  protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">    super.onCreate(savedInstanceState);</span><br><span class="line">    setContentView(R.layout.activity_main);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
     <title>BottomSheetBehavior基础使用</title>
     <url>/BottomSheetBehavior%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>好记性不如烂笔头，做个简简单单的记录~</p>
